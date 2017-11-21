@@ -41,7 +41,7 @@
 
 
                     <li>
-                        <a  href="?page=index"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a  href="index.php"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
                         <a  href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i> Data Anggota</a>
@@ -66,10 +66,24 @@
                         <h5>Welcome Anda , Love to see you back. </h5>-->
 
                         <?php
-                            $page = $_GET['page'];
-                            //$aksi = $_GET['aksi'];
+                            $page = isset($_GET['page']) ? $_GET['page'] : null;
+                            $action = isset($_GET['action']) ? $_GET['action'] : null;
 
-
+                            if($page == "anggota"){
+                                if($action == ""){
+                                    include "";
+                                }
+                            }
+                            else if($page == "buku"){
+                                if($action == ""){
+                                    include "page/buku/buku.php";
+                                }
+                            }
+                            else if($page == "transaksi"){
+                                if($action == ""){
+                                    include "";
+                                }
+                            }
                         ?>
 
                     </div>
