@@ -1,9 +1,22 @@
+<?php
+    $conn = mysqli_connect("localhost", "root", "", "db_lis");
+    //$conn = mysqli_connect("localhost", "root", "");
+    //$dbcon = mysqli_select_db($conn, "db_lis");
+    if ( !$conn ) {
+        die("Connection failed : " . mysqli_error($conn));
+    }
+
+    /*if ( !$dbcon ) {
+        die("Database Connection failed : " . mysqli_error($conn));
+    }*/
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Library Information Systphp LIS</title>
+        <title>Library Information System FAPERTA</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -12,6 +25,8 @@
         <link href="assets/css/custom.css" rel="stylesheet" />
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+        <!-- TABLE STYLES-->
+        <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     </head>
     <body>
     <div id="wrapper">
@@ -23,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Binary admin</a>
+                <a class="navbar-brand" href="//localhost/lis" style="font-size: large">Library Information System FAPERTA</a>
             </div>
             <div style="color: white;
                 padding: 15px 50px 5px 50px;
@@ -41,7 +56,7 @@
 
 
                     <li>
-                        <a  href="index.php"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a  href="//localhost/lis"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
                         <a  href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i> Data Anggota</a>
@@ -67,21 +82,34 @@
 
                         <?php
                             $page = isset($_GET['page']) ? $_GET['page'] : null;
-                            $action = isset($_GET['action']) ? $_GET['action'] : null;
+                            $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : null;
 
-                            if($page == "anggota"){
-                                if($action == ""){
-                                    include "";
+                            if ($page == "anggota"){
+                                if ($aksi == ""){
+                                    include "page/anggota/anggota.php";
+                                }elseif ($aksi == "tambah_anggota"){
+                                    include "page/anggota/tambah_anggota.php";
+                                }elseif ($aksi == "ubah_anggota"){
+                                    include "page/anggota/ubah_anggota.php";
+                                }elseif ($aksi == "hapus_anggota"){
+                                    include "page/anggota/hapus_anggota.php";
                                 }
                             }
-                            else if($page == "buku"){
-                                if($action == ""){
+                            elseif ($page == "buku"){
+                                if ($aksi == ""){
                                     include "page/buku/buku.php";
                                 }
+                                elseif ($aksi == "tambah_buku"){
+                                    include "page/buku/tambah_buku.php";
+                                }elseif ($aksi == "ubah_buku"){
+                                    include "page/buku/ubah_buku.php";
+                                }elseif ($aksi == "hapus_buku"){
+                                    include "page/buku/hapus_buku.php";
+                                }
                             }
-                            else if($page == "transaksi"){
-                                if($action == ""){
-                                    include "";
+                            elseif ($page == "transaksi"){
+                                if ($aksi == ""){
+                                    include "page/transaksi/transaksi.php";
                                 }
                             }
                         ?>
@@ -104,6 +132,14 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
 
