@@ -12,16 +12,16 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input class="form-control" type="text" name="judul"/>
+                                <input class="form-control" type="text" name="judul" style="text-transform: capitalize;"/>
                                 <!--<p class="help-block">Help text here.</p>-->
                             </div>
                             <div class="form-group">
                                 <label>Pengarang</label>
-                                <input class="form-control" type="text" name="pengarang"/>
+                                <input class="form-control" type="text" name="pengarang" style="text-transform: capitalize;"/>
                             </div>
                             <div class="form-group">
                                 <label>Penerbit</label>
-                                <input class="form-control" type="text" name="penerbit"/>
+                                <input class="form-control" type="text" name="penerbit" style="text-transform: capitalize;"/>
                             </div>
                             <div class="form-group">
                                 <label>Tahun Terbit</label>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <label>ISBN</label>
-                                <input class="form-control" type="text" name="isbn"/>
+                                <input class="form-control" type="text" name="isbn" style="text-transform: uppercase;"/>
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Buku</label>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Lokasi</label>
-                                <input class="form-control" type="text" name="lokasi"/>
+                                <input class="form-control" type="text" name="lokasi" style="text-transform: uppercase;"/>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Input</label>

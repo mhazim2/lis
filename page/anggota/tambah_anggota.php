@@ -12,35 +12,42 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>NIM</label>
-                                <input class="form-control" type="text" name="nim"/>
+                                <input class="form-control" type="text" name="nim" style="text-transform:capitalize"/>
                                 <!--<p class="help-block">Help text here.</p>-->
                             </div>
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input class="form-control" type="text" name="nama"/>
+                                <input class="form-control" type="text" name="nama" style="text-transform: capitalize;"/>
                             </div>
                             <div class="form-group">
                                 <label>Tempat Lahir</label>
-                                <input class="form-control" type="text" name="tempat_lahir"/>
+                                <input class="form-control" type="text" name="tempat_lahir" style="text-transform: capitalize;"/>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Lahir</label>
-                                <select class="form-control" name="tanggal_lahir">
-                                    <?php
-                                    $tahun = date("Y");
-                                    for ($i=$tahun; $i>=$tahun-117; $i--){
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                    }
-                                    ?>
-                                </select>
+                                <input class="form-control" type="date" name="tgl_lahir" placeholder="" />
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
-                                <input class="form-control" type="text" name="jenis_kelamin"/>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki-laki"/>Laki-laki
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="jenis_kelamin" id="optionsRadios2" value="Perempuan"/>Perempuan
+                                    </label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Departemen</label>
-                                <input class="form-control" type="number" name="departemen" value="1"/>
+                                <select class="form-control" name="departemen">
+                                    <option value="AGRONOMI & HORTIKULTURA">AGRONOMI & HORTIKULTURA</option>
+                                    <option value="ILMU TANAH DAN SUMBERDAYA LAHAN">ILMU TANAH DAN SUMBERDAYA LAHAN</option>
+                                    <option value="PROTEKSI TANAMAN">PROTEKSI TANAMAN</option>
+                                    <option value="ARSITEKTUR LANSKAP">ARSITEKTUR LANSKAP</option>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
                             <button type="reset" class="btn btn-default">Reset</button>
@@ -54,23 +61,20 @@
 
 <?php
     $nim = isset($_POST['nim']) ? $_POST['nim'] : null;
-    $pengarang = isset($_POST['pengarang']) ? $_POST['pengarang'] : null;
-    $penerbit = isset($_POST['penerbit']) ? $_POST['penerbit'] : null;
-    $tahun_terbit = isset($_POST['tahun_terbit']) ? $_POST['tahun_terbit'] : null;
-    $isbn = isset($_POST['isbn']) ? $_POST['isbn'] : null;
-    $jumlah_buku = isset($_POST['jumlah_buku']) ? $_POST['jumlah_buku'] : null;
-    $lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : null;
-    $tgl_input = isset($_POST['tgl_input']) ? $_POST['tgl_input'] : null;
-
+    $nama = isset($_POST['nama']) ? $_POST['nama'] : null;
+    $tempat_lahir = isset($_POST['tempat_lahir']) ? $_POST['tempat_lahir'] : null;
+    $tgl_lahir = isset($_POST['tgl_lahir']) ? $_POST['tgl_lahir'] : null;
+    $jenis_kelamin = isset($_POST['jenis_kelamin']) ? $_POST['jenis_kelamin'] : null;
+    $departemen = isset($_POST['departemen']) ? $_POST['departemen'] : null;
     $simpan = isset($_POST['simpan']) ? 1 : 0;
     if ($simpan){
 
-        $sql = mysqli_query($conn,"insert into tb_buku (judul, pengarang, penerbit, tahun_terbit, isbn, jumlah_buku, lokasi, tgl_input) values ('$judul', '$pengarang', '$penerbit', '$tahun_terbit', '$isbn', '$jumlah_buku', '$lokasi', '$tgl_input')") or die(mysqli_error($conn));
+        $sql = mysqli_query($conn,"insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jenis_kelamin, departemen) values ('$nim', '$nama', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$departemen')") or die(mysqli_error($conn));
         if ($sql){
             ?>
             <script type="text/javascript">
                 alert("Data Berhasil Disimpan!");
-                window.location.href="?page=buku";
+                window.location.href="?page=anggota";
             </script>
             <?php
         }
