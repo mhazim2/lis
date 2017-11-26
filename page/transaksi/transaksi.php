@@ -49,8 +49,7 @@
                                             $denda1 = $lambat*$denda;
 
                                             if($lambat>0){
-                                                echo"
-                                                
+                                                echo"      
                                                 <font color='red'>$lambat hari<br>(RP $denda1)</font>
                                                 
                                                 ";
