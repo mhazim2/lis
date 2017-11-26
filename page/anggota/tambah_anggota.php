@@ -12,7 +12,7 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>NIM</label>
-                                <input class="form-control" type="text" name="nim" style="text-transform:capitalize"/>
+                                <input class="form-control" type="text" name="nim" style="text-transform: capitalize"/>
                                 <!--<p class="help-block">Help text here.</p>-->
                             </div>
                             <div class="form-group">
@@ -25,14 +25,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Lahir</label>
-                                <input class="form-control" type="date" name="tgl_lahir" placeholder="" />
+                                <input class="form-control" type="date" name="tgl_lahir"/>
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
-                                <!--<select class="form-control" name="departemen">
-                                    <option value="Laki-laki">Laki-laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>-->
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="jk" id="optionsRadios1" value="Laki-laki"/>Laki-laki
@@ -70,8 +66,8 @@
     $tgl_lahir = isset($_POST['tgl_lahir']) ? $_POST['tgl_lahir'] : null;
     $jk = isset($_POST['jk']) ? $_POST['jk'] : null;
     $departemen = isset($_POST['departemen']) ? $_POST['departemen'] : null;
+
     $simpan = isset($_POST['simpan']) ? 1 : 0;
-    echo $jk;
     if ($simpan){
 
         $sql = mysqli_query($conn,"insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, departemen) values ('$nim', '$nama', '$tempat_lahir', '$tgl_lahir', '$jk', '$departemen')") or die(mysqli_error($conn));
