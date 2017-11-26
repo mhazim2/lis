@@ -38,8 +38,8 @@
                                 <td><?php echo $data['jk']; ?></td>
                                 <td><?php echo $data['departemen']; ?></td>
                                 <td>
-                                    <a href="?page=anggota&aksi=ubah_anggota&id=<?php echo $data['id']; ?>" class="btn btn-info">Ubah</a>
-                                    <a onclick="return confirm('Anda Yakin Ingin Menghapus Data Anggota Ini?')" href="?page=anggota&aksi=hapus_anggota&id=<?php echo $data['id']; ?>" class="btn btn-danger">Hapus</a>
+                                    <a href="?page=anggota&aksi=ubah_anggota&nim=<?php echo $data['nim']; ?>" class="btn btn-info">Ubah</a>
+                                    <a onclick="return confirm('Anda Yakin Ingin Menghapus Data Anggota Ini?')" href="?page=anggota&aksi=hapus_anggota&nim=<?php echo $data['nim']; ?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
 

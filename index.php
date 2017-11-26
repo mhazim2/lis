@@ -98,8 +98,7 @@
                             elseif ($page == "buku"){
                                 if ($aksi == ""){
                                     include "page/buku/buku.php";
-                                }
-                                elseif ($aksi == "tambah_buku"){
+                                }elseif ($aksi == "tambah_buku"){
                                     include "page/buku/tambah_buku.php";
                                 }elseif ($aksi == "ubah_buku"){
                                     include "page/buku/ubah_buku.php";
