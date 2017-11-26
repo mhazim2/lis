@@ -29,14 +29,18 @@
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
+                                <!--<select class="form-control" name="departemen">
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>-->
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki-laki"/>Laki-laki
+                                        <input type="radio" name="jk" id="optionsRadios1" value="Laki-laki"/>Laki-laki
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="jenis_kelamin" id="optionsRadios2" value="Perempuan"/>Perempuan
+                                        <input type="radio" name="jk" id="optionsRadios2" value="Perempuan"/>Perempuan
                                     </label>
                                 </div>
                             </div>
@@ -64,12 +68,13 @@
     $nama = isset($_POST['nama']) ? $_POST['nama'] : null;
     $tempat_lahir = isset($_POST['tempat_lahir']) ? $_POST['tempat_lahir'] : null;
     $tgl_lahir = isset($_POST['tgl_lahir']) ? $_POST['tgl_lahir'] : null;
-    $jenis_kelamin = isset($_POST['jenis_kelamin']) ? $_POST['jenis_kelamin'] : null;
+    $jk = isset($_POST['jk']) ? $_POST['jk'] : null;
     $departemen = isset($_POST['departemen']) ? $_POST['departemen'] : null;
     $simpan = isset($_POST['simpan']) ? 1 : 0;
+    echo $jk;
     if ($simpan){
 
-        $sql = mysqli_query($conn,"insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jenis_kelamin, departemen) values ('$nim', '$nama', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$departemen')") or die(mysqli_error($conn));
+        $sql = mysqli_query($conn,"insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, departemen) values ('$nim', '$nama', '$tempat_lahir', '$tgl_lahir', '$jk', '$departemen')") or die(mysqli_error($conn));
         if ($sql){
             ?>
             <script type="text/javascript">
