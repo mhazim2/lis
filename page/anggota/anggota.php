@@ -30,13 +30,13 @@
                             ?>
 
                             <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $data['nim']; ?></td>
-                                <td><?php echo $data['nama']; ?></td>
-                                <td><?php echo $data['tempat_lahir']; ?></td>
-                                <td><?php echo $data['tgl_lahir']; ?></td>
-                                <td><?php echo $data['jk']; ?></td>
-                                <td><?php echo $data['departemen']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $no++; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['nim']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['nama']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['tempat_lahir']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['tgl_lahir']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['jk']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['departemen']; ?></td>
                                 <td>
                                     <a href="?page=anggota&aksi=ubah_anggota&nim=<?php echo $data['nim']; ?>" class="btn btn-info">Ubah</a>
                                     <a onclick="return confirm('Anda Yakin Ingin Menghapus Data Anggota Ini?')" href="?page=anggota&aksi=hapus_anggota&nim=<?php echo $data['nim']; ?>" class="btn btn-danger">Hapus</a>

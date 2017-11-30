@@ -31,14 +31,14 @@
                             ?>
 
                             <tr>
-                                <td><?php echo $no++; ?></td>
-                                <td><?php echo $data['judul']; ?></td>
-                                <td><?php echo $data['pengarang']; ?></td>
-                                <td><?php echo $data['penerbit']; ?></td>
-                                <td><?php echo $data['tahun_terbit']; ?></td>
-                                <td><?php echo $data['isbn']; ?></td>
-                                <td><?php echo $data['jumlah_buku']; ?></td>
-                                <td><?php echo $data['lokasi']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $no++; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['judul']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['pengarang']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['penerbit']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['tahun_terbit']; ?></td>
+                                <td style="text-transform: uppercase"><?php echo $data['isbn']; ?></td>
+                                <td style="text-transform: capitalize"><?php echo $data['jumlah_buku']; ?></td>
+                                <td style="text-transform: uppercase"><?php echo $data['lokasi']; ?></td>
                                 <td>
                                     <a href="?page=buku&aksi=ubah_buku&id=<?php echo $data['id']; ?>" class="btn btn-info">Ubah</a>
                                     <a onclick="return confirm('Anda Yakin Ingin Menghapus Data Buku Ini?')" href="?page=buku&aksi=hapus_buku&id=<?php echo $data['id']; ?>" class="btn btn-danger">Hapus</a>

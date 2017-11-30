@@ -1,4 +1,6 @@
 <?php
+    include "function.php";
+
     $conn = mysqli_connect("localhost", "root", "", "db_lis");
     //$conn = mysqli_connect("localhost", "root", "");
     //$dbcon = mysqli_select_db($conn, "db_lis");
@@ -109,6 +111,12 @@
                             elseif ($page == "transaksi"){
                                 if ($aksi == ""){
                                     include "page/transaksi/transaksi.php";
+                                }elseif ($aksi == "tambah_transaksi"){
+                                    include "page/transaksi/tambah_transaksi.php";
+                                }elseif ($aksi == "ubah_transaksi"){
+                                    include "page/transaksi/ubah_transaksi.php";
+                                }elseif ($aksi == "hapus_transaksi"){
+                                    include "page/transaksi/hapus_transaksi.php";
                                 }
                             }
                         ?>

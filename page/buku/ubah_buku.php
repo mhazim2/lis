@@ -18,7 +18,7 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input class="form-control" type="text" name="judul" value="<?php echo $tampil['judul']?> " style="text-transform: capitalize"/>
+                                <input class="form-control" type="text" name="judul" value="<?php echo $tampil['judul']?> " style="text-transform: capitalize" required/>
                                 <!--<p class="help-block">Help text here.</p>-->
                             </div>
                             <div class="form-group">
@@ -32,6 +32,7 @@
                             <div class="form-group">
                                 <label>Tahun Terbit</label>
                                 <select class="form-control" name="tahun_terbit">
+                                    <option value="">Pilih tahun</option>
                                     <?php
                                     $tahun_terbit = $tampil['tahun_terbit'];
                                     $tahun = date("Y");
@@ -50,15 +51,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Buku</label>
-                                <input class="form-control" type="number" name="jumlah_buku" value="1" value="<?php echo $tampil['jumlah_buku']?> "/>
+                                <input class="form-control" type="number" name="jumlah_buku" value="1" value="<?php echo $tampil['jumlah_buku']?> " required/>
                             </div>
                             <div class="form-group">
                                 <label>Lokasi</label>
-                                <input class="form-control" type="text" name="lokasi" value="<?php echo $tampil['lokasi']?> " style="text-transform: uppercase"/>
+                                <input class="form-control" type="text" name="lokasi" value="<?php echo $tampil['lokasi']?> " style="text-transform: uppercase" required/>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Input</label>
-                                <input class="form-control" type="date" name="tgl_input" value="<?php echo $tampil['tgl_input']?>"/>
+                                <input class="form-control" type="date" name="tgl_input" value="<?php echo $tampil['tgl_input']?>" required/>
                             </div>
                             <button type="submit" class="btn btn-primary" name="ubah">Ubah</button>
                         </form>
@@ -70,14 +71,14 @@
 </div>
 
 <?php
-$judul = isset($_POST['judul']) ? $_POST['judul'] : null;
-$pengarang = isset($_POST['pengarang']) ? $_POST['pengarang'] : null;
-$penerbit = isset($_POST['penerbit']) ? $_POST['penerbit'] : null;
-$tahun_terbit = isset($_POST['tahun_terbit']) ? $_POST['tahun_terbit'] : null;
-$isbn = isset($_POST['isbn']) ? $_POST['isbn'] : null;
-$jumlah_buku = isset($_POST['jumlah_buku']) ? $_POST['jumlah_buku'] : null;
-$lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : null;
-$tgl_input = isset($_POST['tgl_input']) ? $_POST['tgl_input'] : null;
+$judul = strtolower(isset($_POST['judul']) ? $_POST['judul'] : null);
+$pengarang = strtolower(isset($_POST['pengarang']) ? $_POST['pengarang'] : null);
+$penerbit = strtolower(isset($_POST['penerbit']) ? $_POST['penerbit'] : null);
+$tahun_terbit = strtolower(isset($_POST['tahun_terbit']) ? $_POST['tahun_terbit'] : null);
+$isbn = strtolower(isset($_POST['isbn']) ? $_POST['isbn'] : null);
+$jumlah_buku = strtolower(isset($_POST['jumlah_buku']) ? $_POST['jumlah_buku'] : null);
+$lokasi = strtolower(isset($_POST['lokasi']) ? $_POST['lokasi'] : null);
+$tgl_input = strtolower(isset($_POST['tgl_input']) ? $_POST['tgl_input'] : null);
 
 $ubah = isset($_POST['ubah']) ? 1 : 0;
 if ($ubah){
@@ -104,6 +105,7 @@ if ($ubah){
         ?>
         <script type="text/javascript">
             alert("Galat, Data Tidak Berhasil Diubah!");
+            window.location.href="?page=buku&aksi=ubah_buku&id=<?php echo $tampil['id']; ?>";
         </script>
         <?php
     }

@@ -12,7 +12,7 @@
                         <form method="post">
                             <div class="form-group">
                                 <label>Judul</label>
-                                <input class="form-control" type="text" name="judul" style="text-transform: capitalize;"/>
+                                <input class="form-control" type="text" name="judul" style="text-transform: capitalize;" required/>
                                 <!--<p class="help-block">Help text here.</p>-->
                             </div>
                             <div class="form-group">
@@ -26,6 +26,7 @@
                             <div class="form-group">
                                 <label>Tahun Terbit</label>
                                 <select class="form-control" name="tahun_terbit">
+                                    <option value="">Pilih tahun</option>
                                     <?php
                                         $tahun = date("Y");
                                         for ($i=$tahun; $i>=$tahun-117; $i--){
@@ -40,15 +41,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Buku</label>
-                                <input class="form-control" type="number" name="jumlah_buku" value="1"/>
+                                <input class="form-control" type="number" name="jumlah_buku" value="1" required/>
                             </div>
                             <div class="form-group">
                                 <label>Lokasi</label>
-                                <input class="form-control" type="text" name="lokasi" style="text-transform: uppercase;"/>
+                                <input class="form-control" type="text" name="lokasi" style="text-transform: uppercase;" required/>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Input</label>
-                                <input class="form-control" type="date" name="tgl_input"/>
+                                <input class="form-control" type="date" name="tgl_input" required/>
                             </div>
                             <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
                             <button type="reset" class="btn btn-default">Reset</button>
@@ -61,14 +62,14 @@
 </div>
 
 <?php
-    $judul = isset($_POST['judul']) ? $_POST['judul'] : null;
-    $pengarang = isset($_POST['pengarang']) ? $_POST['pengarang'] : null;
-    $penerbit = isset($_POST['penerbit']) ? $_POST['penerbit'] : null;
-    $tahun_terbit = isset($_POST['tahun_terbit']) ? $_POST['tahun_terbit'] : null;
-    $isbn = isset($_POST['isbn']) ? $_POST['isbn'] : null;
-    $jumlah_buku = isset($_POST['jumlah_buku']) ? $_POST['jumlah_buku'] : null;
-    $lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : null;
-    $tgl_input = isset($_POST['tgl_input']) ? $_POST['tgl_input'] : null;
+    $judul = strtolower(isset($_POST['judul']) ? $_POST['judul'] : null);
+    $pengarang = strtolower(isset($_POST['pengarang']) ? $_POST['pengarang'] : null);
+    $penerbit = strtolower(isset($_POST['penerbit']) ? $_POST['penerbit'] : null);
+    $tahun_terbit = strtolower(isset($_POST['tahun_terbit']) ? $_POST['tahun_terbit'] : null);
+    $isbn = strtolower(isset($_POST['isbn']) ? $_POST['isbn'] : null);
+    $jumlah_buku = strtolower(isset($_POST['jumlah_buku']) ? $_POST['jumlah_buku'] : null);
+    $lokasi = strtolower(isset($_POST['lokasi']) ? $_POST['lokasi'] : null);
+    $tgl_input = strtolower(isset($_POST['tgl_input']) ? $_POST['tgl_input'] : null);
 
     $simpan = isset($_POST['simpan']) ? 1 : 0;
     if ($simpan){
