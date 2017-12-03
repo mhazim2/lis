@@ -8,7 +8,7 @@
         <!-- Form Elements -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                Tambah Data Anggota
+                Tambah Data Transaksi
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -22,7 +22,7 @@
                                     <?php
                                     $sql = mysqli_query($conn,"select * from tb_buku order by judul");
                                     while ($tampil=mysqli_fetch_assoc($sql)) {
-                                        echo '<option value="'.$tampil['id'].$tampil['judul'].'" style="text-transform: capitalize">'.$tampil['judul'].' : '.$tampil['pengarang'].'</option>';
+                                        echo '<option value="'.$tampil['id'].'" style="text-transform: capitalize">'.$tampil['judul'].' : '.$tampil['pengarang'].'</option>';
                                     }
                                     ?>
                                 </select>
@@ -74,22 +74,23 @@
 </div>
 
 <?php
-$judul = strtolower(isset($_POST['nama']) ? $_POST['nama'] : null);
+$id = strtolower(isset($_POST['judul']) ? $_POST['judul'] : null);
 $nim = strtolower($nim = isset($_POST['nim']) ? $_POST['nim'] : null);
+$nama = substr($nim, 9);
+$nim = substr($nim,0,9);
 $tgl_pinjam = strtolower(isset($_POST['tgl_pinjam']) ? $_POST['tgl_pinjam'] : null);
 $tgl_kembali = strtolower(isset($_POST['tgl_kembali']) ? $_POST['tgl_kembali'] : null);
-$jk = strtolower(isset($_POST['jk']) ? $_POST['jk'] : null);
-$departemen = strtolower(isset($_POST['departemen']) ? $_POST['departemen'] : null);
+
 
 $simpan = isset($_POST['simpan']) ? 1 : 0;
 if ($simpan){
 
-    $sql = mysqli_query($conn,"insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, departemen) values ('$nim', '$nama', '$tempat_lahir', '$tgl_lahir', '$jk', '$departemen')") or die(mysqli_error($conn));
+    $sql = mysqli_query($conn,"insert into tb_transaksi (id, nim, nama, tgl_pinjam, tgl_kembali) values ('$id', '$nim', '$nama', '$tgl_pinjam', '$tgl_kembali')") or die(mysqli_error($conn));
     if ($sql){
         ?>
         <script type="text/javascript">
             alert("Data Berhasil Disimpan!");
-            window.location.href="?page=anggota";
+            window.location.href="?page=transaksi";
         </script>
         <?php
     }
@@ -101,4 +102,5 @@ if ($simpan){
         <?php
     }
 }
+
 ?>
