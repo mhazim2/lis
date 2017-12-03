@@ -7,9 +7,6 @@
     if ( !$conn ) {
         die("Connection failed : " . mysqli_error($conn));
     }
-
-    include "function.php"
-
     /*if ( !$dbcon ) {
         die("Database Connection failed : " . mysqli_error($conn));
     }*/
