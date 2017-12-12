@@ -55,7 +55,6 @@
                         <img src="assets/img/find_user.png" class="user-image img-responsive"/>
                     </li>
 
-
                     <li>
                         <a  href="//localhost/lis"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
@@ -88,7 +87,12 @@
                             $page = isset($_GET['page']) ? $_GET['page'] : null;
                             $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : null;
 
-                            if ($page == "anggota"){
+                            if ($page == null){
+                                //if ($aksi == ""){
+                                    include "page/dashboard/dashboard.php";
+                                //}
+                            }
+                            eleseif ($page == "anggota"){
                                 if ($aksi == ""){
                                     include "page/anggota/anggota.php";
                                 }elseif ($aksi == "tambah_anggota"){
