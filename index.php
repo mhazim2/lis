@@ -68,6 +68,9 @@
                     <li>
                         <a  href="?page=transaksi"><i class="fa fa-dashboard fa-3x"></i> Transaksi</a>
                     </li>
+                    <li>
+                        <a  href="?page=riwayat_transaksi"><i class="fa fa-dashboard fa-3x"></i> Riwayat Transaksi</a>
+                    </li>
                 </ul>
 
             </div>
@@ -116,6 +119,11 @@
                                     include "page/transaksi/ubah_transaksi.php";
                                 }elseif ($aksi == "hapus_transaksi"){
                                     include "page/transaksi/hapus_transaksi.php";
+                                }
+                            }
+                            elseif ($page == "riwayat_transaksi"){
+                                if ($aksi == ""){
+                                    include "page/riwayat_transaksi/riwayat_transaksi.php";
                                 }
                             }
                         ?>
