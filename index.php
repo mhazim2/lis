@@ -59,16 +59,16 @@
                         <a  href="//localhost/lis"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a  href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i> Data Anggota</a>
+                        <a  href="?page=anggota"><i class="fa fa-user fa-3x"></i> Data Anggota</a>
                     </li>
                     <li>
-                        <a  href="?page=buku"><i class="fa fa-dashboard fa-3x"></i> Data Buku</a>
+                        <a  href="?page=buku"><i class="fa fa-book fa-3x"></i> Data Buku</a>
                     </li>
                     <li>
-                        <a  href="?page=transaksi"><i class="fa fa-dashboard fa-3x"></i> Transaksi</a>
+                        <a  href="?page=transaksi"><i class="fa fa-exchange fa-3x"></i> Transaksi</a>
                     </li>
                     <li>
-                        <a  href="?page=riwayat_transaksi"><i class="fa fa-dashboard fa-3x"></i> Riwayat Transaksi</a>
+                        <a  href="?page=riwayat_transaksi"><i class="fa fa-history fa-3x"></i> Riwayat Transaksi</a>
                     </li>
                 </ul>
 
