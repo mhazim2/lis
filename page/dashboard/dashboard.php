@@ -17,7 +17,7 @@
             ?>
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-red set-icon">
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fa fa-book"></i>
                 </span>
                 <div class="text-box" >
                     <p class="main-text">
@@ -38,7 +38,7 @@
             ?>
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-green set-icon">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-user"></i>
                 </span>
                 <div class="text-box" >
                     <p class="main-text">
@@ -59,7 +59,7 @@
             ?>
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-blue set-icon">
-                    <i class="fa fa-bell-o"></i>
+                    <i class="fa fa-user"></i>
                 </span>
                 <div class="text-box" >
                     <p class="main-text">
@@ -76,7 +76,7 @@
 
             <div class="panel panel-back noti-box">
                 <span class="icon-box bg-color-brown set-icon">
-                    <i class="fa fa-rocket"></i>
+                    <i class="fa fa-user"></i>
                 </span>
                 <div class="text-box" >
                     <p class="main-text">
